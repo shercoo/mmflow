@@ -51,5 +51,5 @@
     </tbody>
 </table>
 
-将上表中各模型的Config与Model下载保存至 `checkpoint` 子目录中，在根目录下运行 `demo/warp_optical_flow.py` ，运行结果生成在 `results` 子目录中。
+将上表中各模型的Config与Model下载保存至 `checkpoints` 子目录中，在根目录下运行 `demo/warp_optical_flow.py` ，运行结果生成在 `results` 子目录中。
 
