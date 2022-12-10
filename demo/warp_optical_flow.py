@@ -36,7 +36,7 @@ def run_inference(model,img1,img2,out_dir,model_name,out_suffix):
 
     cv2.imwrite(osp.join(out_dir, out_name+'.png'), new_frame)
 
-    #print(out_name,f'PSNR: {PSNR(dst,new_frame)} SSIM: {SSIM(dst,new_frame,multichannel=True)}')
+    print(out_name,f'PSNR: {PSNR(dst,new_frame)} SSIM: {SSIM(dst,new_frame,multichannel=True)}')
 
     mmcv.mkdir_or_exist(out_dir)
     visualize_flow(flow, osp.join(out_dir, out_name+'_flow.png'))
@@ -86,7 +86,7 @@ for cfg in os.listdir('checkpoints'):
                 PSNR2to1.append(p2)
                 SSIM1to2.append(s1)
                 SSIM2to1.append(s2)
-                print("%s & %.4f & %.4f & %.4f & %.4f \\\\ \\hline \n" % (osp.splitext(img_name)[0].replace('01',''),p1,s1,p2,s2))
+                # print("%s & %.4f & %.4f & %.4f & %.4f \\\\ \\hline \n" % (osp.splitext(img_name)[0].replace('01',''),p1,s1,p2,s2))
         results[0][model_name]=copy.deepcopy(PSNR1to2)
         results[1][model_name]=copy.deepcopy(SSIM1to2)
         results[2][model_name]=copy.deepcopy(PSNR2to1)
